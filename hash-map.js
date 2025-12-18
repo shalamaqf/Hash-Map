@@ -3,6 +3,8 @@ class hashMap {
     constructor() {
         this.capacity = 16;
         this.loadFactor = 0.75;
+        this.size = 0;
+        this.table = new Array(this.capacity);
     }
 
     // Create a hash map function to hash a key and produce a hash code
