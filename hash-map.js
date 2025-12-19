@@ -1,3 +1,5 @@
+import { LinkedList } from "./linkedList.js";
+
 // Create a hash map class
 class hashMap {
     constructor() {
