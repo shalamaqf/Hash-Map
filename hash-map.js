@@ -43,4 +43,15 @@ class hashMap {
         // Add new key-value pair if the key is not same
         this.table[hashCode].add(key, value);
     }
+
+    // Create a method to get the key's value
+    get(key) {
+        const hashCode = hash(key);
+
+        // Check if the key is in the bucket
+        if (!this.table[hashCode].isExist(key)) return null;
+
+        // If exist, return the key's value
+        return this.table[hashCode].findValue(key);
+    }
 }
