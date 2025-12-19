@@ -21,26 +21,26 @@ class hashMap {
         return hashCode;
     }
 
-    // Create a method to set key-value pair in the bucket of the hash table
+    // Create a method to set entry in the bucket of the hash table
     set(key, value) {
         // Hash the key to get the hash code
         const hashCode = hash(key);
 
-        // Create a linked list object in the bucket if it's empty and set the pair in it
+        // Create a linked list object in the bucket if it's empty and set the entry in it
         if (this.table[hashCode] === undefined) {
             this.table[hashCode] = new LinkedList();
             this.table[hashCode].add(key, value);
             return;
         }
 
-        // Overwrite the key-value pair if the key is same
+        // Overwrite the entry if the key is same
         if (this.table[hashCode].isExist(key)) {
             this.table[hashCode].update(key, value);
             return;
         }
 
 
-        // Add new key-value pair if the key is not same
+        // Add new entry if the key is not same
         this.table[hashCode].add(key, value);
     }
 
@@ -62,14 +62,14 @@ class hashMap {
         return this.table[hashCode].isExist(key);
     }
 
-    // Create a method to remove a key-value pair from the hash table
+    // Create a method to remove an entry from the hash table
     remove(key) {
         const hashCode = hash(key);
 
         // Return false if the key is not exist
         if (!this.table[hashCode].isExist(key)) return false;
 
-        // If exist, remove the key-value pair from the table
+        // If exist, remove the entry from the table
         this.table[hashCode].removeNode(key);
         return true;
     }
