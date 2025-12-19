@@ -138,6 +138,24 @@ class LinkedList {
 
         return arrayValues;
     }
+
+    // Create a method to return an array containing all the key-value pair in the list
+    getAllPairs() {
+        let arrayPairs = [];
+
+        if (this.head === null && this.tail === null) return arrayPairs;
+
+        let temp = this.head;
+        while (temp !== null) {
+            const pair = [];
+            pair.push(temp.key);
+            pair.push(temp.value);
+            arrayPairs.push(pair);
+            temp = temp.next;
+        }
+
+        return arrayPairs;
+    }
 }
 
 // Create a node class
