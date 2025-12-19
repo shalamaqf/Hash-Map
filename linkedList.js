@@ -5,6 +5,23 @@ class LinkedList {
         this.tail = null;
     }
 
+    // Create a method to add new node to the list
+    add(key, value) {
+        const newNode = new Node(key, value); 
+
+        // If list is empty
+        if (this.head === null && this.tail === null) {
+            this.head = newNode;
+            this.tail = newNode;
+            newNode.next = null;
+            return;
+        }
+
+        this.tail.next = newNode;
+        this.tail = newNode;
+        newNode.next = null;
+    } 
+
     // Create a method to traversal the list and get the key
     find(key) {
         if (this.head === null && this.tail === null) return null;
