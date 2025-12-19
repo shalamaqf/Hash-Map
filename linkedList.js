@@ -39,13 +39,13 @@ export class LinkedList {
             return null;
     }
 
-    // Create a method to traversal the list and get the key
-    find(key) {
+    // Create a method to traversal the list and get the key's value
+    findValue(key) {
         if (this.head === null && this.tail === null) return null;
 
         let temp = this.head;
         while (temp !== null)  {
-            if (key === temp.key) return temp;
+            if (key === temp.key) return temp.value;
             temp = temp.next;
         }
         return null;
