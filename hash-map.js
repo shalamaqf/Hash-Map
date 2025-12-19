@@ -20,4 +20,27 @@ class hashMap {
 
         return hashCode;
     }
+
+    // Create a method to set key-value pair in the bucket of the hash table
+    set(key, value) {
+        // Hash the key to get the hash code
+        const hashCode = hash(key);
+
+        // Create a linked list object in the bucket if it's empty and set the pair in it
+        if (this.table[hashCode] === undefined) {
+            this.table[hashCode] = new LinkedList();
+            this.table[hashCode].add(key, value);
+            return;
+        }
+
+        // Overwrite the key-value pair if the key is same
+        if (this.table[hashCode].isExist(key)) {
+            this.table[hashCode].update(key, value);
+            return;
+        }
+
+
+        // Add new key-value pair if the key is not same
+        this.table[hashCode].add(key, value);
+    }
 }
