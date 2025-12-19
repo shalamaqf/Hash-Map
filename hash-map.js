@@ -61,4 +61,16 @@ class hashMap {
 
         return this.table[hashCode].isExist(key);
     }
+
+    // Create a method to remove a key-value pair from the hash table
+    remove(key) {
+        const hashCode = hash(key);
+
+        // Return false if the key is not exist
+        if (!this.table[hashCode].isExist(key)) return false;
+
+        // If exist, remove the key-value pair from the table
+        this.table[hashCode].removeNode(key);
+        return true;
+    }
 }
