@@ -5,3 +5,12 @@ class LinkedList {
         this.tail = null;
     }
 }
+
+// Create a node class
+class Node {
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
+        this.next = null;
+    }
+}
