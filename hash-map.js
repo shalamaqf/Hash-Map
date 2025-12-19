@@ -54,4 +54,11 @@ class hashMap {
         // If exist, return the key's value
         return this.table[hashCode].findValue(key);
     }
+
+    // Create a method to check if the key is in the hash table
+    has(key) {
+        const hashCode = hash(key);
+
+        return this.table[hashCode].isExist(key);
+    }
 }
