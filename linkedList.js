@@ -108,6 +108,21 @@ class LinkedList {
         
         return total;
     }
+
+    // Create a method to return an array containing all the key in the list
+    getAllKeys() {
+        let arrayKeys = [];
+        
+        if (this.head === null && this.tail === null) return arrayKeys;
+
+        let temp = this.head;
+        while (temp !== null) {
+            arrayKeys.push(temp.key);
+            temp = temp.next;
+        }
+
+        return arrayKeys;
+    }
 }
 
 // Create a node class
