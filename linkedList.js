@@ -20,7 +20,24 @@ export class LinkedList {
         this.tail.next = newNode;
         this.tail = newNode;
         newNode.next = null;
-    } 
+    }
+
+    // Create a method to update the old node with the new node, if the key is same.
+    update(key, value) {
+        const newNode = new Node(key, value);
+
+        let temp = this.head;
+        while (temp !== null) {
+            if (temp.key === key) {
+                temp.key = key;
+                temp.value = value;
+                return;
+            }
+            temp = temp.next;
+        }
+
+            return null;
+    }
 
     // Create a method to traversal the list and get the key
     find(key) {
