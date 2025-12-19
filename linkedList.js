@@ -16,6 +16,17 @@ class LinkedList {
         }
         return null;
     }
+
+    isExist(key) {
+        if (this.head === null && this.tail === null) return false;
+
+        let temp = this.head;
+        while (temp !== null) {
+            if (key === temp.key) return true;
+            temp = temp.next;
+        }
+        return false;
+    }
 }
 
 // Create a node class
