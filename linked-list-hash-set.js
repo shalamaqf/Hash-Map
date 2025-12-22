@@ -5,3 +5,11 @@ export class LinkedList {
         this.tail = null;
     }
 }
+
+// Create a class for the node
+class Node {
+    constructor(key) {
+        this.key = key;
+        this.next = null;
+    }
+}
