@@ -5,7 +5,6 @@ export class hashMap {
     constructor() {
         this.capacity = 16;
         this.loadFactor = 0.75;
-        this.size = 0;
         this.table = new Array(this.capacity);
     }
 
@@ -139,6 +138,31 @@ export class hashMap {
         }
 
         return entries.flat(1);
+    }
+
+    // Expand the table capacity if the entries load factor is more than 0.75
+    expand() {
+        let totalEntries = this.length();
+        let totalBuckets = this.capacity;
+        let currentLoadFactor = totalEntries / totalBuckets;
+
+        // Check if the current load factor is more than 0.75
+        if (currentLoadFactor <= this.loadFactor) return;
+
+        // Create a temporary table to store all entries
+        let temporaryTable = this.entries();
+
+        // Clear the entries from the original table
+        this.clear();
+
+        // Set the new value of the hash map properties
+        this.capacity = this.capacity * 2;
+        this.table = new Array(this.capacity)
+
+        // Set the entreis to the new table
+        for (let i = 0; i < temporaryTable.length; i++) {
+            this.set(temporaryTable[i][0], temporaryTable[i][1]);
+        }
     }
 
 }
