@@ -24,7 +24,7 @@ export class hashMap {
     // Create a method to set entry in the bucket of the hash table
     set(key, value) {
         // Hash the key to get the hash code
-        const hashCode = hash(key);
+        const hashCode = this.hash(key);
 
         // Create a linked list object in the bucket if it's empty and set the entry in it
         if (this.table[hashCode] === undefined) {
@@ -46,7 +46,7 @@ export class hashMap {
 
     // Create a method to get the key's value
     get(key) {
-        const hashCode = hash(key);
+        const hashCode = this.hash(key);
 
         // Check if the key is in the bucket
         if (!this.table[hashCode].isExist(key)) return null;
@@ -57,14 +57,14 @@ export class hashMap {
 
     // Create a method to check if the key is in the hash table
     has(key) {
-        const hashCode = hash(key);
+        const hashCode = this.hash(key);
 
         return this.table[hashCode].isExist(key);
     }
 
     // Create a method to remove an entry from the hash table
     remove(key) {
-        const hashCode = hash(key);
+        const hashCode = this.hash(key);
 
         // Return false if the key is not exist
         if (!this.table[hashCode].isExist(key)) return false;
