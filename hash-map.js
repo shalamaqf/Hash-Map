@@ -96,4 +96,17 @@ class hashMap {
             }
         }
     }
+
+    // Create a method to returns an array containing all keys inside the hash map
+    keys() {
+        let keys = [];
+
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.table[i] instanceof LinkedList) {
+                keys.push(this.table[i].getAllKeys());
+            }
+        }
+
+        return keys.flat();
+    }
 }
