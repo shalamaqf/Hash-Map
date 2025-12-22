@@ -67,6 +67,9 @@ export class hashMap {
     // Create a method to remove an entry from the hash table
     remove(key) {
         const hashCode = this.hash(key);
+        
+        // Return if a bucket is empty/undefined
+        if (this.table[hashCode] === undefined) return false;
 
         // Return false if the key is not exist
         if (!this.table[hashCode].isExist(key)) return false;
