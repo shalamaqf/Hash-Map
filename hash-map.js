@@ -109,4 +109,17 @@ class hashMap {
 
         return keys.flat();
     }
+
+    // Create a method to returns an array containing all values inside the hash map
+    values() {
+        let values = [];
+
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.table[i] instanceof LinkedList) {
+                values.push(this.table[i].getAllValues());
+            }
+        }
+
+        return values.flat();
+    }
 }
