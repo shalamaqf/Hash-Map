@@ -63,52 +63,12 @@ export class LinkedList {
         return false;
     }
 
-    // Create a method to traverse the list and remove the node from the list
-    removeNode(key) {
+    // Create a method to traverse the list and removes all nodes from the list
+    removeNode() {
         if (this.head === null && this.tail === null) return null;
 
-        let temp = this.head;
-        let current = temp.next;
-
-        // If there's only one node
-        if (this.head === this.tail) {
-            if (this.head.key === key) {
-                this.head = null;
-                this.tail = null;
-                return;
-            }
-            return null;
-        }
-
-        // If the head is the key
-        if (this.head.key === key) {
-            this.head = current;
-            temp.next = null;
-            return;
-        }
-
-        // If the key is somewhere between the list
-        while (current.next !== null) {
-            if (current.key === key) {
-                temp.next = current.next;
-                current.next = null;
-                return;
-            }
-
-            temp = temp.next;
-            current = current.next;
-        }
-
-
-        // If the tail is the key 
-        if (current.key === key) {
-            this.tail = temp;
-            temp.next = null;
-            return;
-        }
-
-        return null;
-
+        this.head = null;
+        this.tail = null;
     }
 
     // Create a method to count the number of nodes in the list
