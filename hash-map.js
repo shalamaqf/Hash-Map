@@ -73,4 +73,18 @@ class hashMap {
         this.table[hashCode].removeNode(key);
         return true;
     }
+
+    // Create a method to returns the number of stored keys in the hash map
+    length() {
+        let total = 0;
+
+        // Loop the hash table
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.table[i] instanceof LinkedList) {
+                total += this.table[i].countNode();
+            }
+        }
+
+        return total;
+    }
 }
