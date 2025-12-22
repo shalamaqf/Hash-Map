@@ -1,7 +1,7 @@
 import { LinkedList } from "./linkedList.js";
 
 // Create a hash map class
-class hashMap {
+export class hashMap {
     constructor() {
         this.capacity = 16;
         this.loadFactor = 0.75;
