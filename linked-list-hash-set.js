@@ -4,6 +4,22 @@ export class LinkedList {
         this.head = null;
         this.tail = null;
     }
+
+    // Create a method to add the key to the list
+    add(key) {
+        const newNode = new Node(key);
+
+        // If the list is empty
+        if (this.head === null && this.tail === null) {
+            this.head = newNode;
+            this.tail = newNode;
+            return;
+        }
+
+        this.tail.next = newNode;
+        this.tail = newNode;
+        newNode.next = null;
+    }
 }
 
 // Create a class for the node
