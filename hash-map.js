@@ -94,7 +94,7 @@ export class hashMap {
     clear() {
         for (let i = 0; i < this.capacity; i++) {
             if (this.table[i] instanceof LinkedList) {
-                this.table[i].removeNode();
+                this.table[i].removeAllNodes();
             }
         }
     }

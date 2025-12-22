@@ -64,7 +64,7 @@ export class LinkedList {
     }
 
     // Create a method to traverse the list and removes all nodes from the list
-    removeNode() {
+    removeAllNodes() {
         if (this.head === null && this.tail === null) return null;
 
         this.head = null;
