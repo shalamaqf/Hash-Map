@@ -122,4 +122,18 @@ class hashMap {
 
         return values.flat();
     }
+
+    // Create a method to returns an array containing each (key, value) pair inside the hash map
+    entries() {
+        let entries = [];
+
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.table[i] instanceof LinkedList) {
+                entries.push(this.table[i].getAllPairs());
+            }
+        }
+
+        return entries.flat(1);
+    }
+
 }
