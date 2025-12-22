@@ -1,4 +1,4 @@
-import { LinkedList } from "./linkedList.js";
+import { LinkedList } from "./linked-list.js";
 
 // Create a hash map class
 export class HashMap {
