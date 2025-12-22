@@ -41,6 +41,9 @@ export class hashMap {
 
         // Add new entry if the key is not same
         this.table[hashCode].add(key, value);
+
+        // Expand the table size in case the load factor is more than 0.75
+        this.expand();
     }
 
     // Create a method to get the key's value
