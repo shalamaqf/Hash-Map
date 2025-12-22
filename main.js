@@ -1,6 +1,6 @@
-import { hashMap } from "./hash-map.js";
+import { HashMap } from "./hash-map.js";
 
-const test = new hashMap();
+const test = new HashMap();
 test.set('apple', 'red');
 test.set('banana', 'yellow')
 test.set('carrot', 'orange')
