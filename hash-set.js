@@ -1,3 +1,5 @@
+import { LinkedList } from './linked-list-hash-set';
+
 // Create a hash set class
 export class HashSet {
     constructor() {
