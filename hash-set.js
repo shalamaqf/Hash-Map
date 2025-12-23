@@ -34,4 +34,13 @@ export class HashSet {
 
         this.table[hashCode].add(key);
     }
+
+    // Create a method to get the key from the table
+    get(key) {
+        const hashCode = this.hash(key);
+
+        if (!this.table[hashCode].isExist(key)) return null;
+
+        return this.table[hashCode].getKey(key);
+    }
 }
