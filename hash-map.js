@@ -28,8 +28,6 @@ export class HashMap {
         // Create a linked list object in the bucket if it's empty and set the entry in it
         if (this.table[hashCode] === undefined) {
             this.table[hashCode] = new LinkedList();
-            this.table[hashCode].add(key, value);
-            return;
         }
 
         // Overwrite the entry if the key is same
