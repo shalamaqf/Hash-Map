@@ -1,4 +1,4 @@
-import { LinkedList } from './linked-list-hash-set';
+import { LinkedList } from './linked-list-hash-set.js';
 
 // Create a hash set class
 export class HashSet {
@@ -96,6 +96,26 @@ export class HashSet {
         }
 
         return keys.flat();
+    }
+
+    // Create a method to expand table's capacity if load factor more than 0.75
+    expand() {
+        const totalEntries = this.length();
+        const totalBuckets = this.capacity;
+        const currentLoadFactor = totalEntries / totalBuckets;
+
+        if (currentLoadFactor <= this.loadFactor) return;
+
+        const temporaryTable = this.keys();
+
+        this.clear();
+
+        this.capacity = this.capacity * 2;
+        this.table = new Array(this.capacity);
+
+        for (let i = 0; i < this.capacity; i++) {
+            this.set(temporaryTable[i]);
+        }
     }
 
 }
