@@ -20,6 +20,20 @@ export class LinkedList {
         this.tail = newNode;
         newNode.next = null;
     }
+
+    // Create a method to check if a key is exist in the list
+    isExist(key) {
+        if (this.head === null && this.tail === null) return false;
+
+        let temp = this.head;
+        while(temp !== null) {
+            if (temp.key === key) return true;
+            temp = temp.next;
+        }
+        return false;
+    }
+
+
 }
 
 // Create a class for the node
