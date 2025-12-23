@@ -33,6 +33,18 @@ export class LinkedList {
         return false;
     }
 
+    // Create a method to return a key
+    getKey(key) {
+        if (this.head === null && this.tail === null) return null;
+
+        let temp = this.head;
+        while (temp !== null) {
+            if (temp.key === key) return temp.key;
+            temp = temp.next;
+        }
+        return null;
+    }
+
 
 }
 
