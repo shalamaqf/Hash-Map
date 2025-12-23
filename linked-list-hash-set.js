@@ -121,8 +121,6 @@ export class LinkedList {
         }
         return arrayKeys;
     }
-
-
 }
 
 // Create a class for the node
