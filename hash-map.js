@@ -50,6 +50,9 @@ export class HashMap {
     get(key) {
         const hashCode = this.hash(key);
 
+        // Check if a bucket is still empty/undefined
+        if (this.table[hashCode] === undefined) return false;
+
         // Check if the key is in the bucket
         if (!this.table[hashCode].isExist(key)) return null;
 
