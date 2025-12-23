@@ -19,4 +19,19 @@ export class HashSet {
 
         return hashCode;
     }
+
+    // Create a method to set the key in the table
+    set(key) {
+        const hashCode = hash(key);
+
+        if (this.table[hashCode] === undefined) {
+            this.table[hashCode] = new LinkedList();
+            this.table[hashCode].add(key);
+            return;
+        }
+
+        if (this.table[hashCode].isExist(key)) return;
+
+        this.table[hashCode].add(key);
+    }
 }
