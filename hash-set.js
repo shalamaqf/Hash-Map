@@ -39,6 +39,7 @@ export class HashSet {
     get(key) {
         const hashCode = this.hash(key);
 
+        if (this.table[hashCode] === undefined) return null;
         if (!this.table[hashCode].isExist(key)) return null;
 
         return this.table[hashCode].getKey(key);
