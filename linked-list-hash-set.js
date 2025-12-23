@@ -99,6 +99,15 @@ export class LinkedList {
         return total;
     }
 
+    // Create a method to remove all nodes in the list
+    removeAllNodes() {
+        if (this.head === null && this.tail === null) return null;
+
+        this.head = null;
+        this.tail = null;
+        return;
+    }
+
 
 }
 
