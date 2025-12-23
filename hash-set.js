@@ -63,4 +63,16 @@ export class HashSet {
         this.table[hashCode].removeKey(key);
         return true;
     }
+
+    // Create a method to returns the number of stored keys in the table
+    length() {
+        let total = 0;
+
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.table[i] instanceof LinkedList) {
+                total += this.table[i].getTotal();
+            }
+        }
+        return total;
+    }
 }
