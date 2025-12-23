@@ -84,5 +84,18 @@ export class HashSet {
             }
         }
     }
-    
+
+    // Create a method to returns an array containing all keys in the table
+    keys() {
+        let keys = [];
+
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.table[i] instanceof LinkedList) {
+                keys.push(this.table[i].getAllKeys());
+            }
+        }
+
+        return keys.flat();
+    }
+
 }
