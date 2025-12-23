@@ -26,13 +26,12 @@ export class HashSet {
 
         if (this.table[hashCode] === undefined) {
             this.table[hashCode] = new LinkedList();
-            this.table[hashCode].add(key);
-            return;
         }
 
         if (this.table[hashCode].isExist(key)) return;
 
         this.table[hashCode].add(key);
+        this.expand();
     }
 
     // Create a method to get the key from the table
@@ -114,7 +113,7 @@ export class HashSet {
         this.capacity = this.capacity * 2;
         this.table = new Array(this.capacity);
 
-        for (let i = 0; i < this.capacity; i++) {
+        for (let i = 0; i < temporaryTable.length; i++) {
             this.set(temporaryTable[i]);
         }
     }
