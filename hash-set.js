@@ -52,4 +52,15 @@ export class HashSet {
 
         return this.table[hashCode].isExist(key);
     }
+
+    // Create a method to remove a key from the table
+    remove(key) {
+        const hashCode = this.hash(key);
+
+        if (this.table[hashCode] === undefined) return false;
+        if (!this.table[hashCode].isExist(key)) return false;
+    
+        this.table[hashCode].removeKey(key);
+        return true;
+    }
 }
