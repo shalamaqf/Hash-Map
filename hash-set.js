@@ -75,4 +75,14 @@ export class HashSet {
         }
         return total;
     }
+
+    // Create a method to clear all entries in the list
+    clear() {
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.table[i] instanceof LinkedList) {
+                this.table[i].removeAllNodes();
+            }
+        }
+    }
+    
 }
