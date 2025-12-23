@@ -33,7 +33,7 @@ export class LinkedList {
         return false;
     }
 
-    // Create a method to return a key
+    // Create a method to return a node's key
     getKey(key) {
         if (this.head === null && this.tail === null) return null;
 
@@ -42,6 +42,46 @@ export class LinkedList {
             if (temp.key === key) return temp.key;
             temp = temp.next;
         }
+        return null;
+    }
+
+    // Create a method to remove a node's key from the list
+    removeKey(key) {
+        if (this.head === null && this.tail === null) return null;
+
+        let temp = this.head;
+        let current = temp.next;
+
+        if (this.head === this.tail) {
+            if (this.head.key === key) {
+                this.head = null;
+                this.tail = null;
+                return;
+            }
+        }
+
+        if (this.head.key === key) {
+            this.head = current;
+            temp.next = null;
+            return;
+        }
+
+        while (current.next !== null) {
+            if (current.key === key) {
+                temp.next = current.next;
+                current.next = null;
+                return;
+            }
+            temp = temp.next;
+            current = current.next;
+        }
+
+        if (this.tail.key === key) {
+            this.tail = temp;
+            temp.next = null;
+            return;
+        }
+
         return null;
     }
 
