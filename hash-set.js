@@ -43,4 +43,13 @@ export class HashSet {
 
         return this.table[hashCode].getKey(key);
     }
+
+    // Create a method to check if key is exist in the table
+    has(key) {
+        const hashCode = this.hash(key);
+
+        if (this.table[hashCode] === undefined) return false;
+
+        return this.table[hashCode].isExist(key);
+    }
 }
