@@ -22,7 +22,7 @@ export class HashSet {
 
     // Create a method to set the key in the table
     set(key) {
-        const hashCode = hash(key);
+        const hashCode = this.hash(key);
 
         if (this.table[hashCode] === undefined) {
             this.table[hashCode] = new LinkedList();
