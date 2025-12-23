@@ -85,6 +85,20 @@ export class LinkedList {
         return null;
     }
 
+    // Create a method to count total nodes in the list
+    getTotal() {
+        let total = 0;
+
+        if (this.head === null && this.tail === null) return total;
+
+        let temp = this.head;
+        while(temp !== null) {
+            total++;
+            temp = temp.next;
+        }
+        return total;
+    }
+
 
 }
 
